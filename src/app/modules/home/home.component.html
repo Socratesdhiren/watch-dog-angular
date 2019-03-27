@@ -1,0 +1,201 @@
+<div class="home-body">
+    <div class="header-container-title" >
+      <h3 class="header-title">Home</h3>
+    </div>   
+    <div class="ui-g">     
+      <div style="display: block">     
+   <div  class="ui-g"> 
+     <div  class="ui-g-12 ui-md-6 ui-lg-12"   >
+        <div class="ui-g-12" >  <h3>Load Average</h3> </div>              
+            <table>   
+                 <tr>
+                   <th>Time</th>
+                   <th>Up-Time</th>
+                   <th>Host-Name</th>
+                   <th>Total Process </th>
+                   <th>Load 5</th>
+                   <th>Load 10</th>
+                   <th>Load 15</th>
+                 </tr>
+              <tr  *ngFor="let ldavg of loadavg">
+                    <td>  {{ldavg.Ptime}}    </td>
+                    <td>{{ldavg.OsInfo.up_time}}sec</td>
+                    <td>{{ldavg.OsInfo.host_name}} </td>
+                    <td> {{ldavg.OsInfo.no_process-60}}</td>
+                  <td>  {{ldavg.LoadAvg.load1}} </td>
+                  <td>  {{ldavg.LoadAvg.load5}} </td>
+                  <td>  {{ldavg.LoadAvg.load15}} </td>
+               </tr >
+               </table>
+              </div>             
+          </div>
+          <div  class="ui-g"> 
+            <div  class="ui-g-12 ui-md-6 ui-lg-6"   >
+              <div class="ui-g-12" >  <h3>OS Detail</h3> </div>
+              <table  class="table">                
+               <tr>
+                  <th>Host-Name</th>
+                  <th>Kernel-Version</th>                   
+                  <th>Operating System </th>
+                  <th>Platform</th>
+                  <th>Platform-Version</th>     
+                </tr>                   
+                <tr *ngFor="let osdata of osinf">
+                  <td>{{osdata.OsInfo.host_name}}</td>
+                  <td>{{osdata.OsInfo.kernelversion }} </td>          
+                  <td>{{osdata.OsInfo.osbrief}} </td>
+                  <td>{{osdata.OsInfo.paltform}}</td>
+                  <td>{{osdata.OsInfo.platformversion }}</td>    
+            </tr>
+              </table> 
+                     </div>
+       
+       
+                       <div class="ui-g-12 ui-md-6 ui-lg-6"     >
+                       <div   class="ui-g-12">  <h3> Memory Percentage</h3>    </div>
+                      <p-chart type="pie" [data]="datapercent"></p-chart>
+                     </div>               
+                 </div>
+                              <br>
+                            </div>
+                            </div>
+          
+     
+      
+  
+
+
+      <div   class="ui-g">
+          <div class="ui-g-12 ui-md-6 ui-lg-6">
+      <div  class="ui-g-12" >
+        <h3>Ram-Memory Detail</h3></div>
+       <p-chart type="doughnut" [data]="data"></p-chart>
+       </div>
+     <div class="ui-g-12 ui-md-6 ui-lg-6">
+       <div class="ui-g-12" > <h3>Swap-Memory Detail</h3></div>
+        <p-chart type="pie" [data]="dataswap"></p-chart>
+      </div> 
+      </div>
+   
+       <br>
+             
+        <div> <h3> CpuInfo</h3></div>
+
+      <p-table  [value]="cpuinfo"  id ="table-id">
+          <ng-template pTemplate="header">
+             <tr>
+               <th>Cpu</th>
+               <th>Vendor-Id</th>
+               <th>family</th>
+               <th>Cores</th>
+               <th>Model-Name</th>
+               <th>Mhz</th>
+               <th>cacheSize</th>
+             </tr>
+
+            </ng-template>
+            <ng-template pTemplate="body" let-cpu>
+             <tr >
+               <td>{{cpu.cpu}}</td>
+               <td>{{cpu.vendorId}} </td>
+               <td>{{cpu.family}}</td>
+               <td>{{cpu.cores}}</td>
+               <td>{{cpu.modelName}}</td>
+               <td>{{cpu.mhz / 1024}}</td>
+               <td>{{cpu.cacheSize /1024}}KB</td>
+               </tr>
+              </ng-template>
+           </p-table> 
+       <br>
+         <div class="ui-g">
+        <div class="ui-g-12 ui-mg-6 ui-lg-6" >
+           <div  class="ui-g-12" >
+              <h3> Total CPU State </h3></div>
+         <p-chart type="doughnut" [data]="cpuactive"></p-chart>
+                </div>          
+        <div class="ui-g-12 ui-mg-6 ui-lg-4">
+            <div>
+                <h3> Network Detail </h3> 
+              </div>
+           <table>
+              <tr>
+                  <th>Byte-Sent  </th>
+                  <th>Byte-Recv  </th>                 
+                  <th>Packet-Sent  </th>
+                  <th>Packet-recv  </th>         
+                              
+                </tr>
+                <tr *ngFor="let netwk of datanetwork">
+                    <td>{{(netwk.bytesSent)}}</td>
+                    <td>{{ (netwk.bytesRecv)}} </td>
+                    <td>{{ netwk.packetsSent  }} </td>
+                    <td>{{ netwk.packetsRecv  }} </td>                                  
+              </tr>
+           </table>
+            </div>
+        </div>
+
+           <br>
+          <br>
+                  <div> <h3>IfConfig</h3></div> 
+                 <p-table  [value]="ipinfo"  id ="table-id">
+  
+        <ng-template pTemplate="header">
+           <tr>
+         <th>MTU</th>
+         <th>Name</th>
+         <th>Hardware Address</th>
+         <th>Flags</th>
+         <th>Addrs</th>              
+       </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-ipinf>
+       <tr >
+         <td>{{ipinf.mtu}}</td>
+         <td>{{ipinf.name}} </td>
+         <td>{{ipinf.hardwareaddr}}</td>
+         <td>{{ipinf.flags}}</td>
+        <td>{{ipinf.addrs.laddr}}</td>
+         </tr>
+        </ng-template>
+     </p-table> 
+<br>
+       <div  class="ui-g">
+         <div  class="ui-g-12" ><h4>Current Process Details</h4>
+        </div>
+        <p-table  [value]="processInfo"    scrollHeight="200px" [paginator]="true" [rows]="10" id="table-id" >
+          <ng-template pTemplate="header">
+         <tr>
+            <th>Pid</th>
+            <th>CPU %</th>
+            <th>Memory%</th>
+            <th>Status</th>
+            <th>RAM (MB)</th>
+            <th>VMEM(MB) </th>
+            <th>Swap(MB)</th>
+            <th>Name(MB)</th>
+          </tr>            
+        </ng-template> 
+        <ng-template pTemplate="body"  let-proc>
+          <tr >
+            <td>{{proc.pid}}</td>
+            <td>{{proc.cpu_percent }} %</td>
+            <td>{{proc.memory_percent }}%</td>
+            <td>{{proc.status}}</td>
+            <td>{{(proc.mem_info.rss/1024) /1024 }} </td>
+            <td>{{(proc.mem_info.vms /1024 )/1024}} </td>
+            <td>{{(proc.mem_info.swap /1024)/1024}} </td>
+            <td>{{proc.name}}</td>
+          </tr>
+        </ng-template>
+        </p-table>        
+      </div>  
+    </div>
+       
+
+
+
+
+   
+
+

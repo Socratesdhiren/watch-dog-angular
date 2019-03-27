@@ -1,0 +1,207 @@
+<div class="layout-wrapper">
+  <div id="layout-topbar">
+    <div style="margin-top: -10px;">
+      <div class="ui-g-4 ui-md-6 ui-lg-6">
+        <a class="menu-button" (click)="onMenuButtonClick($event)">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a class="logo" style="" [routerLink]="['/']">
+          <!--<div style=" background-color: white;-->
+<!--margin-left: 50px;-->
+<!--width: 150px;-->
+<!--margin-top: -15px;-->
+<!--height:50px;-->
+<!--text-align: center;-->
+<!--font-family: Mr De Haviland', cursive';">-->
+          <!--</div>-->
+          
+        </a>
+      </div>
+      <div class="ui-g-8 ui-md-6 ui-lg-6 right-menu">
+        <ul style="cursor: pointer;">
+          <li class="lihov username" ><a style="color: white; margin-top:-20px ;"
+                                                 routerLink="/profile/changes">Profile</a></li>
+          <li class="lihov" (click)="logoutDialog()" routerLink="/login" ><i class="fa fa-power-off"></i></li>
+        </ul>
+
+      </div>
+
+      <!--Layout Topbar Ending-->
+    </div>
+
+
+  </div>
+
+  <div>
+    <div id="layout-sidebar" [ngClass]="{'active': menuActive}" style="margin-top:-13px">
+      <div class="layout-menu" style="margin-left: -30px;">
+        <!--/* Home Management*/-->
+
+
+
+        <a id="hom" #home (click)="activeMenuId = (activeMenuId === home.id ? null : home.id)">
+          <span [routerLink]="['/home']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true} "
+                (click)="onSubMenuClick()"
+                (click)="menuActive = false ">  <i class="fa fa-home"></i> &nbsp; &nbsp;
+            Home</span>
+          </a>
+
+
+       
+        <!--Transaction Details-->
+        <!-- <a id="transaction_detail" #transaction_detail [class.active-menuitem]="transaction_detail.id == activeMenuId"
+           (click)="activeMenuId = (activeMenuId === transaction_detail.id ? null : transaction_detail.id)"
+           class="active">
+          <span>  <i class="fa fa-rocket"></i> &nbsp; &nbsp;
+           Configuration
+          </span>
+        </a>
+        <div class="submenushow list"
+             [ngClass]="{'submenushow': (transaction_detail.id == activeMenuId), 'submenuhide': (transaction_detail.id != activeMenuId)}">
+          <ul style="margin-left:25px;  margin-top:-18px;margin-bottom: -10px;">
+            <li id="trans_acc" name="trans_acc" #trans_acc [class.active-menuitem]="trans_acc.id == activeSubMenuId"
+                (click)="activeSubMenuId = (activeSubMenuId === trans_acc.id ? null : trans_acc.id)">
+              <a [routerLink]="['/settings/add']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}"
+                 (click)="onSubMenuClick()">
+                <i class="fa fa-cogs "></i>
+                <span  class="sbmenu" >  Settings</span>
+              </a>
+            </li>
+            
+
+
+          </ul>
+        </div> -->
+
+        <a id="purchase" #purchase [class.active-menuitem]="purchase.id == activeMenuId"
+           (click)="activeMenuId = (activeMenuId === purchase.id ? null : purchase.id)"
+           class="active">
+          <span>  <i class="fa fa-users"></i> &nbsp; &nbsp;
+            User Management
+          </span>
+        </a>
+        <div class="submenushow list"
+             [ngClass]="{'submenushow': (purchase.id == activeMenuId), 'submenuhide': (purchase.id != activeMenuId)}">
+          <ul style="margin-left:25px;  margin-top:-18px;margin-bottom: -10px;">
+            <li id="purchaseOrder" name="purchaseOrder" #purchaseOrder [class.active-menuitem]="purchaseOrder.id == activeSubMenuId"
+                (click)="activeSubMenuId = (activeSubMenuId === purchaseOrder.id ? null : purchaseOrder.id)">
+              <a [routerLink]="['/users/add']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}"
+                 (click)="onSubMenuClick()">
+                <i class="fa fa-circle"></i>
+                <span class="sbmenu" >  New</span>
+              </a>
+            </li>
+            <li id="purchaseOrder" name="purchaseOrder" #purchaseOrder [class.active-menuitem]="purchaseOrder.id == activeSubMenuId"
+                (click)="activeSubMenuId = (activeSubMenuId === purchaseOrder.id ? null : purchaseOrder.id)">
+              <a [routerLink]="['/users/list']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}"
+                 (click)="onSubMenuClick()">
+                <i class="fa fa-users"></i>
+             <span class="sbmenu"> Lists</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+       
+
+        <a id="setting" #setting [class.active-menuitem]="setting.id == activeMenuId"
+           (click)="activeMenuId = (activeMenuId === setting.id ? null : setting.id)"
+           class="active">
+          <span>  <i class="fa fa-bell"></i> &nbsp; &nbsp;
+            Alerts
+          </span>
+        </a>
+        <div class="submenushow list"
+             [ngClass]="{'submenushow': (setting.id == activeMenuId), 'submenuhide': (setting.id != activeMenuId)}">
+          <ul style="margin-left:25px;  margin-top:-18px;margin-bottom: -10px;">
+            <li id="location" name="location" #location [class.active-menuitem]="location.id == activeSubMenuId"
+                (click)="activeSubMenuId = (activeSubMenuId === location.id ? null : location.id)">
+              <a [routerLink]="['/locations']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}"
+                 (click)="onSubMenuClick()">
+                <i class="fa fa-map-bells"></i>
+                <span class="sbmenu" >  Notification </span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!--//sample page-->
+        <a id="sample_page" #sample_page [class.active-menuitem]="sample_page.id == activeMenuId"
+           (click)="activeMenuId = (activeMenuId === sample_page.id ? null : sample_page.id)" class="active">
+          <span>  <i class="fa fa-book"></i> &nbsp; &nbsp;
+         Reports
+          </span>
+        </a>
+
+        <!--<div [ngClass]="{'submenushow': (transaction_detail.id == activeMenuId), 'submenuhide': (transaction_detail.id != activeMenuId)}" class="list">-->
+        <!--<ul style="margin-left:25px;  margin-top:-18px;margin-bottom: -10px;">-->
+        <!--<li id="trans_acc" name="trans_acc" #trans_acc [class.active-menuitem]="trans_acc.id == activeSubMenuId" (click)="activeSubMenuId = (activeSubMenuId === trans_acc.id ? null : trans_acc.id)" ><a [routerLink]="['/payment']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-credit-card-alt "></i>  Payment</a></li>-->
+        <!--</ul>-->
+
+        <!--</div>-->
+        <div class="submenushow list"
+             [ngClass]="{'submenushow': (sample_page.id == activeMenuId), 'submenuhide': (sample_page.id != activeMenuId)}">
+          <ul style="margin-left:25px;  margin-top:-18px;margin-bottom: -10px;">
+            <!-- <li id="sample_add" name="sample_add" #sample_add [class.active-menuitem]="trans_acc.id == activeSubMenuId"
+                (click)="activeSubMenuId = (activeSubMenuId === sample_add.id ? null : sample_add.id)"> -->
+              <a [routerLink]="['/sample/add']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}"
+                 (click)="onSubMenuClick()">
+                <i class="fa fa-wpforms "></i>
+                <span class="sbmenu"> Daily Reports</span>
+
+
+              </a>
+            <!-- </li> -->
+            <li id="sample_lists" name="sample_lists" #sample_lists
+                [class.active-menuitem]="sample_lists.id == activeSubMenuId"
+                (click)="activeSubMenuId = (activeSubMenuId === sample_lists.id ? null : sample_lists.id)">
+              <a [routerLink]="['/sample/list']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}"
+                 (click)="onSubMenuClick()">
+                <i class="fa fa-list "></i>
+                <span class="sbmenu" > Weekly Repots</span>
+              </a>
+            </li>
+
+             <li id="sample_blank" name="sample_blank" #sample_blank [class.active-menuitem]="sample_blank.id == activeSubMenuId"
+                (click)="activeSubMenuId = (activeSubMenuId === sample_blank.id ? null : sample_blank.id)">
+              <a [routerLink]="['/sample/blank']" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}"
+                 (click)="onSubMenuClick()">
+                <i class="fa fa-columns "></i>
+                <span class="sbmenu">  Monthly Reports</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="layout-mask" *ngIf="menuActive">
+    </div>
+    <div id="layout-content" class="bodypart" #abc (click)="onBodyClick($event)" >
+      <div class="pra" >
+        <span class="ui-msg"><p-messages [closable]="false" class="pmsg-top"></p-messages></span>
+        <div class="pmsg-growl">
+          <p-growl life="10000111"></p-growl>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+     
+      <footer class="content-section layout-footer affix" id="footerid">
+        <!-- <div class="pull-right hidden-xs ">Build no.: 1.0</div> -->
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2010 Remote System Monitoting Tool <a href="#" routerLink="/" class="compantName"></a>.
+        </strong> All rights reserved.
+      </footer>
+    </div>
+    
+
+  </div>
+ 
+</div> 
+<p-dialog header="Logout" [(visible)]="logoutdisplay" [modal]="true">
+  <span>Are you sure want to logout?</span>
+<p-footer>
+  <button type="button" pButton  (click)="logout()" label="logout" ></button>
+  <button type="button" pButton  (click)="logoutdisplay=false" label="Cancel"></button>
+</p-footer>
+</p-dialog>

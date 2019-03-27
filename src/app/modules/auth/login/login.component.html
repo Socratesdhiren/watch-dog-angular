@@ -1,0 +1,26 @@
+<div class="main-body">
+    <div class="login-page">
+     <!--<p-messages  [(value)]="msgs" [closable]="false" class="login_msg_top"></p-messages>-->
+      <div class="form-login">
+        <div *ngIf="message" class="{{message.cssClass}} text-center" style="color: red;">{{message.msg}}</div>
+        <div class="panel-heading">Remote System Monitoring Tool</div>
+
+        <div *ngIf="showLoading">
+          <img style="margin-top:2%;margin-left:10%; height:90px"  />
+        </div>
+        <div >
+        <form>
+       <p class="message" style="color: black;font-size:20px">Login System</p>
+        </form>
+        <form class="login-form" #form="ngForm">
+          <input class="login-input" type="text" placeholder="User Name" name="userName" [(ngModel)]="loginModel.username" />
+          <input class="login-input" type="password" placeholder="Password" name="passWord" [(ngModel)]="loginModel.password" />
+          <button pButton type="submit" label="Login" (click)="onSubmit()" class="login-btn"></button>
+        </form>
+        <span  style="float: right; font-size: 14px;margin-top: 1px;cursor: pointer;"><a routerLink="./reset">Reset password</a></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+

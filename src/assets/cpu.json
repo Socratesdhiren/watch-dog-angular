@@ -1,0 +1,8 @@
+{
+    "CpuInfo":[
+    {"cpu":0,"vendorId":"GenuineIntel","family":"6","cores":1,"modelName":"Intel(R) Core(TM) i3-3120M CPU @ 2.50GHz","mhz":2500,"cacheSize":3072},
+    {"cpu":1,"vendorId":"GenuineIntel","family":"6","cores":1,"modelName":"Intel(R) Core(TM) i3-3120M CPU @ 2.50GHz","mhz":2500,"cacheSize":3072},
+    {"cpu":2,"vendorId":"GenuineIntel","family":"6","cores":1,"modelName":"Intel(R) Core(TM) i3-3120M CPU @ 2.50GHz","mhz":2500,"cacheSize":3072},
+    {"cpu":3,"vendorId":"GenuineIntel","family":"6","cores":1,"modelName":"Intel(R) Core(TM) i3-3120M CPU @ 2.50GHz","mhz":2500,"cacheSize":3072}
+    ] 
+}

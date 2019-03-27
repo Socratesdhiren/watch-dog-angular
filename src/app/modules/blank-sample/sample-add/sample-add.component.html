@@ -1,0 +1,415 @@
+<!-- 
+<div class="home-body">
+
+  <div style=" height: 50px;">
+    <h3 style=" padding: 1% 1%; border-bottom: thin solid silver;">Form Controls</h3>
+    <div>
+
+    </div>
+  </div>
+   <div class="ui-g">
+     <div class="ui-g-12 ui-md-6 ui-lg-6">
+        <div class="ui-g-4">
+            InputText
+        </div>
+        <div class="ui-g-8">
+            <input class="form-control" pInputText type="text" style="min-width: 60%" />
+        </div>
+
+
+        <div class="ui-g-4">
+            Calendar
+        </div>
+        <div class="ui-g-8">
+            <p-calendar inputStyleClass="calender"  styleClass="calender" [(ngModel)]="date"></p-calendar>
+        </div>
+
+
+        <div class="ui-g-4">
+            Dropdown
+        </div>
+        <div class="ui-g-8">
+            <p-dropdown styleClass="select" [options]="cities" ></p-dropdown>
+        </div>
+         <div class="ui-g-4">
+           Radio
+         </div>
+         <div class="ui-g-8">
+           <div class="ui-g radiobuttons">
+             <div class="ui-g-12"><p-radioButton name="group1" value="Option 1" ></p-radioButton><label >Option 1</label></div>
+             <div class="ui-g-12"><p-radioButton name="group1" value="Option 2" ></p-radioButton><label>Option 2</label></div>
+             <div class="ui-g-12"><p-radioButton name="group1" value="Option 3" ></p-radioButton><label >Option 3</label></div>
+             <div class="ui-g-12"><p-radioButton name="group1" value="Option 4"></p-radioButton><label class="ui-widget">Option 4</label></div>
+           </div>
+         </div>
+
+
+
+     </div>
+     <div class="ui-g-12 ui-md-6 ui-lg-6">
+
+       <div class="ui-g-4">
+         Password
+       </div>
+       <div class="ui-g-8">
+         <input class="form-control" type="password" pPassword style="min-width: 60%"/>
+       </div>
+
+       <div class="ui-g-4">
+         Textarea
+       </div>
+       <div class="ui-g-8">
+         <textarea class="text-area" pInputTextarea type="text" style="min-width: 60%"></textarea>
+       </div>
+
+
+
+       <div class="ui-g-4">
+         CheckBox
+       </div>
+       <div class="ui-g-8">
+         <div class="ui-g radiobuttons">
+           <div class="ui-g-12">
+            <p-checkbox name="active"   binary="true;" ></p-checkbox>Checkbox 1
+           </div>
+           <div class="ui-g-12">
+            <p-checkbox name="active2"   binary="true;" ></p-checkbox>Checkbox 2
+           </div>
+           <div class="ui-g-12">
+             <p-checkbox name="active3"   binary="true;" ></p-checkbox>Checkbox 3
+           </div>
+           <div class="ui-g-12">
+            <p-checkbox name="active4"  binary="true;" ></p-checkbox>Checkbox 4
+           </div>
+           </div>
+       </div>
+     </div>
+      <div class="ui-g-8" style="float: left">
+         <button pButton id="submit_btn"  type="button" label="Submit" ></button>
+       </div>
+  </div>
+  <div class="ui-g">
+      <div class="ui-g-12 ui-md-6 ui-lg-6">
+         <div class="ui-g-4">
+             InputText
+         </div>
+         <div class="ui-g-8">
+             <input class="form-control" pInputText type="text" style="min-width: 60%" />
+         </div>
+ 
+ 
+         <div class="ui-g-4">
+             Calendar
+         </div>
+         <div class="ui-g-8">
+             <p-calendar inputStyleClass="calender"  styleClass="calender" [(ngModel)]="date"></p-calendar>
+         </div>
+ 
+ 
+         <div class="ui-g-4">
+             Dropdown
+         </div>
+         <div class="ui-g-8">
+             <p-dropdown styleClass="select" [options]="cities" ></p-dropdown>
+         </div>
+          <div class="ui-g-4">
+            Radio
+          </div>
+          <div class="ui-g-8">
+            <div class="ui-g radiobuttons">
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 1" ></p-radioButton><label >Option 1</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 2" ></p-radioButton><label>Option 2</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 3" ></p-radioButton><label >Option 3</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 4"></p-radioButton><label class="ui-widget">Option 4</label></div>
+            </div>
+          </div>
+ 
+ 
+ 
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-lg-6">
+ 
+        <div class="ui-g-4">
+          Password
+        </div>
+        <div class="ui-g-8">
+          <input class="form-control" type="password" pPassword style="min-width: 60%"/>
+        </div>
+ 
+        <div class="ui-g-4">
+          Textarea
+        </div>
+        <div class="ui-g-8">
+          <textarea class="text-area" pInputTextarea type="text" style="min-width: 60%"></textarea>
+        </div>
+ 
+ 
+ 
+        <div class="ui-g-4">
+          CheckBox
+        </div>
+        <div class="ui-g-8">
+          <div class="ui-g radiobuttons">
+            <div class="ui-g-12">
+             <p-checkbox name="active"   binary="true;" ></p-checkbox>Checkbox 1
+            </div>
+            <div class="ui-g-12">
+             <p-checkbox name="active2"   binary="true;" ></p-checkbox>Checkbox 2
+            </div>
+            <div class="ui-g-12">
+              <p-checkbox name="active3"   binary="true;" ></p-checkbox>Checkbox 3
+            </div>
+            <div class="ui-g-12">
+             <p-checkbox name="active4"  binary="true;" ></p-checkbox>Checkbox 4
+            </div>
+            </div>
+        </div>
+      </div>
+       <div class="ui-g-8" style="float: left">
+          <button pButton id="submit_btn"  type="button" label="Submit" ></button>
+        </div>
+   </div>
+   <div class="ui-g">
+      <div class="ui-g-12 ui-md-6 ui-lg-6">
+         <div class="ui-g-4">
+             InputText
+         </div>
+         <div class="ui-g-8">
+             <input class="form-control" pInputText type="text" style="min-width: 60%" />
+         </div>
+ 
+ 
+         <div class="ui-g-4">
+             Calendar
+         </div>
+         <div class="ui-g-8">
+             <p-calendar inputStyleClass="calender"  styleClass="calender" [(ngModel)]="date"></p-calendar>
+         </div>
+ 
+ 
+         <div class="ui-g-4">
+             Dropdown
+         </div>
+         <div class="ui-g-8">
+             <p-dropdown styleClass="select" [options]="cities" ></p-dropdown>
+         </div>
+          <div class="ui-g-4">
+            Radio
+          </div>
+          <div class="ui-g-8">
+            <div class="ui-g radiobuttons">
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 1" ></p-radioButton><label >Option 1</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 2" ></p-radioButton><label>Option 2</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 3" ></p-radioButton><label >Option 3</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 4"></p-radioButton><label class="ui-widget">Option 4</label></div>
+            </div>
+          </div>
+ 
+ 
+ 
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-lg-6">
+ 
+        <div class="ui-g-4">
+          Password
+        </div>
+        <div class="ui-g-8">
+          <input class="form-control" type="password" pPassword style="min-width: 60%"/>
+        </div>
+ 
+        <div class="ui-g-4">
+          Textarea
+        </div>
+        <div class="ui-g-8">
+          <textarea class="text-area" pInputTextarea type="text" style="min-width: 60%"></textarea>
+        </div>
+ 
+ 
+ 
+        <div class="ui-g-4">
+          CheckBox
+        </div>
+        <div class="ui-g-8">
+          <div class="ui-g radiobuttons">
+            <div class="ui-g-12">
+             <p-checkbox name="active"   binary="true;" ></p-checkbox>Checkbox 1
+            </div>
+            <div class="ui-g-12">
+             <p-checkbox name="active2"   binary="true;" ></p-checkbox>Checkbox 2
+            </div>
+            <div class="ui-g-12">
+              <p-checkbox name="active3"   binary="true;" ></p-checkbox>Checkbox 3
+            </div>
+            <div class="ui-g-12">
+             <p-checkbox name="active4"  binary="true;" ></p-checkbox>Checkbox 4
+            </div>
+            </div>
+        </div>
+      </div>
+       <div class="ui-g-8" style="float: left">
+          <button pButton id="submit_btn"  type="button" label="Submit" ></button>
+        </div>
+   </div>
+   <div class="ui-g">
+      <div class="ui-g-12 ui-md-6 ui-lg-6">
+         <div class="ui-g-4">
+             InputText
+         </div>
+         <div class="ui-g-8">
+             <input class="form-control" pInputText type="text" style="min-width: 60%" />
+         </div>
+ 
+ 
+         <div class="ui-g-4">
+             Calendar
+         </div>
+         <div class="ui-g-8">
+             <p-calendar inputStyleClass="calender"  styleClass="calender" [(ngModel)]="date"></p-calendar>
+         </div>
+ 
+ 
+         <div class="ui-g-4">
+             Dropdown
+         </div>
+         <div class="ui-g-8">
+             <p-dropdown styleClass="select" [options]="cities" ></p-dropdown>
+         </div>
+          <div class="ui-g-4">
+            Radio
+          </div>
+          <div class="ui-g-8">
+            <div class="ui-g radiobuttons">
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 1" ></p-radioButton><label >Option 1</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 2" ></p-radioButton><label>Option 2</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 3" ></p-radioButton><label >Option 3</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 4"></p-radioButton><label class="ui-widget">Option 4</label></div>
+            </div>
+          </div>
+ 
+ 
+ 
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-lg-6">
+ 
+        <div class="ui-g-4">
+          Password
+        </div>
+        <div class="ui-g-8">
+          <input class="form-control" type="password" pPassword style="min-width: 60%"/>
+        </div>
+ 
+        <div class="ui-g-4">
+          Textarea
+        </div>
+        <div class="ui-g-8">
+          <textarea class="text-area" pInputTextarea type="text" style="min-width: 60%"></textarea>
+        </div>
+ 
+ 
+ 
+        <div class="ui-g-4">
+          CheckBox
+        </div>
+        <div class="ui-g-8">
+          <div class="ui-g radiobuttons">
+            <div class="ui-g-12">
+             <p-checkbox name="active"   binary="true;" ></p-checkbox>Checkbox 1
+            </div>
+            <div class="ui-g-12">
+             <p-checkbox name="active2"   binary="true;" ></p-checkbox>Checkbox 2
+            </div>
+            <div class="ui-g-12">
+              <p-checkbox name="active3"   binary="true;" ></p-checkbox>Checkbox 3
+            </div>
+            <div class="ui-g-12">
+             <p-checkbox name="active4"  binary="true;" ></p-checkbox>Checkbox 4
+            </div>
+            </div>
+        </div>
+      </div>
+       <div class="ui-g-8" style="float: left">
+          <button pButton id="submit_btn"  type="button" label="Submit" ></button>
+        </div>
+   </div>
+   <div class="ui-g">
+      <div class="ui-g-12 ui-md-6 ui-lg-6">
+         <div class="ui-g-4">
+             InputText
+         </div>
+         <div class="ui-g-8">
+             <input class="form-control" pInputText type="text" style="min-width: 60%" />
+         </div>
+ 
+ 
+         <div class="ui-g-4">
+             Calendar
+         </div>
+         <div class="ui-g-8">
+             <p-calendar inputStyleClass="calender"  styleClass="calender" [(ngModel)]="date"></p-calendar>
+         </div>
+ 
+ 
+         <div class="ui-g-4">
+             Dropdown
+         </div>
+         <div class="ui-g-8">
+             <p-dropdown styleClass="select" [options]="cities" ></p-dropdown>
+         </div>
+          <div class="ui-g-4">
+            Radio
+          </div>
+          <div class="ui-g-8">
+            <div class="ui-g radiobuttons">
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 1" ></p-radioButton><label >Option 1</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 2" ></p-radioButton><label>Option 2</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 3" ></p-radioButton><label >Option 3</label></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Option 4"></p-radioButton><label class="ui-widget">Option 4</label></div>
+            </div>
+          </div>
+ 
+ 
+ 
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-lg-6">
+ 
+        <div class="ui-g-4">
+          Password
+        </div>
+        <div class="ui-g-8">
+          <input class="form-control" type="password" pPassword style="min-width: 60%"/>
+        </div>
+ 
+        <div class="ui-g-4">
+          Textarea
+        </div>
+        <div class="ui-g-8">
+          <textarea class="text-area" pInputTextarea type="text" style="min-width: 60%"></textarea>
+        </div>
+ 
+ 
+ 
+        <div class="ui-g-4">
+          CheckBox
+        </div>
+        <div class="ui-g-8">
+          <div class="ui-g radiobuttons">
+            <div class="ui-g-12">
+             <p-checkbox name="active"   binary="true;" ></p-checkbox>Checkbox 1
+            </div>
+            <div class="ui-g-12">
+             <p-checkbox name="active2"   binary="true;" ></p-checkbox>Checkbox 2
+            </div>
+            <div class="ui-g-12">
+              <p-checkbox name="active3"   binary="true;" ></p-checkbox>Checkbox 3
+            </div>
+            <div class="ui-g-12">
+             <p-checkbox name="active4"  binary="true;" ></p-checkbox>Checkbox 4
+            </div>
+            </div>
+        </div>
+      </div>
+       <div class="ui-g-8" style="float: left">
+          <button pButton id="submit_btn"  type="button" label="Submit" ></button>
+        </div>
+   </div>
+</div> -->

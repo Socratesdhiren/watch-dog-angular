@@ -1,0 +1,132 @@
+<div class="home-body">
+    <div class="header-container-title" >
+      <h3 *ngIf="!isUpdated" class="header-title">Add User </h3>
+        </div>
+    <form #userForm="ngForm">
+      <div class="ui-g">
+        <div class="ui-g-12 ui-md-6 ui-lg-6">
+          <label style="margin-left: 9px" >First Name:</label><br>
+          <div class="ui-g-12 ui-md-6 ui-lg-6">
+            <input type="text"  class ="form-control" [(ngModel)]="userModel.firstName" #firstName="ngModel" name="firstName" pInputText  required />
+            <span *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+                                      <span [hidden]="!firstName.errors.required" style="color: red">
+                                      Please Enter First Name.
+                                      </span>
+                              </span>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-lg-5">
+            <label style="margin-left: 9px" >Middle Name:</label><br>
+          <div class="ui-g-12 ui-md-6 ui-lg-7">
+            <input type="text"  class ="form-control" [(ngModel)]="userModel.middleName" #middleName="ngModel" name="middleName" pInputText   >
+            <span *ngIf="middleName.errors && (middleName.dirty || middleName.touched)">
+                                      <span [hidden]="!middleName.errors.required" style="color: red">
+                                      Please Enter Middle Name.
+                                      </span>
+                              </span>        
+                             </div>
+          </div>
+        </div>   
+      <div class="ui-g">
+        <div class="ui-g-12 ui-md-6 ui-lg-6">
+  
+          <label style="margin-left: 9px" >Last Name:</label><br>
+          <div class="ui-g-12 ui-md-6 ui-lg-6">
+            <input type="text"  class ="form-control"  [(ngModel)]="userModel.lastName" #lastName="ngModel" name="lastName" pInputText   required>
+            <span *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+                                      <span [hidden]="!lastName.errors.required" style="color: red">
+                                      Please Enter Last Name.
+                                            </span>
+                              </span>
+          </div>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-lg-5">
+  
+          <label style="margin-left: 9px" >Username:</label><br>
+          <div class="ui-g-12 ui-md-6 ui-lg-7">
+              <input type="text"  class ="form-control" [(ngModel)]="userModel.username" #username="ngModel" name="username" pInputText   required>
+            <span *ngIf="username.errors && (username.dirty || username.touched)">
+                                      <span [hidden]="!username.errors.required" style="color: red">
+                                      Please Enter Username.
+                                            </span>
+                              </span>
+          </div>
+  
+        </div>
+  
+      </div>
+   
+      <div class="ui-g" >
+          <div class="ui-g-12 ui-md-6 ui-lg-6">
+  
+              <label style="margin-left: 9px">Password:</label><br>
+              <div class="ui-g-12 ui-md-6 ui-lg-6">
+              <input type="password"  validateEqualTo="confirmPassword"  class ="form-control" [(ngModel)]="userModel.password" #password="ngModel" name="password" pInputText  required>
+                <span *ngIf="password.errors && (password.dirty || password.touched)">
+                              <span [hidden]="!password.errors.required" style="color: red">
+                              Please Enter Password.
+                              </span>
+                      </span>
+            </div>
+          </div>
+          <div class="ui-g-12 ui-md-6 ui-lg-5" *ngIf="!isUpdated">
+  
+              <label style="margin-left: 9px">Confirm Password:</label><br>
+              <div class="ui-g-12 ui-md-6 ui-lg-7">
+                <input type="password"  class ="form-control" [(ngModel)]="userModel.confirmPassword" #confirmPassword1="ngModel" name="confirmPassword1" pInputText   required>
+                <small *ngIf="!(userModel.password === userModel.confirmPassword)" style="color: red">
+                  Password mismatch
+                </small>
+                </div>
+              </div>
+            </div>
+      <div class="ui-g">
+        <div class="ui-g-12 ui-md-6 ui-lg-6">
+  
+          <label style="margin-left: 9px" >Email:</label><br>
+          <div class="ui-g-12 ui-md-6 ui-lg-6">
+            <input type="text"  class ="form-control" [(ngModel)]="userModel.email" #email="ngModel" name="email" pInputText  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+           
+                                            <span  *ngIf="email.errors && email.errors.pattern" style="color: red">
+                                              Email is invalid
+                                            </span>
+                           
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-lg-5">
+            <label style="margin-left: 9px" >Mobile:</label><br>
+          <div class="ui-g-12 ui-md-6 ui-lg-7">
+            <input type="number"  class ="form-control" [(ngModel)]="userModel.mobileNumber" #mobileNumber="ngModel" name="mobileNumber" pInputText   required >
+            <span *ngIf="mobileNumber.errors && (mobileNumber.dirty || mobileNumber.touched)">
+                                      <span [hidden]="!mobileNumber.errors.required" style="color: red">
+                                      Please Enter Mobile.
+                                            </span>
+                                         
+                              </span>
+              </div>
+          </div>
+        </div>
+      <div class="ui-g">
+        <div class="ui-g-12 ui-md-6 ui-lg-5">
+  
+          <label style="margin-left: 9px" >Role:</label><br>
+          <div class="ui-g-12 ui-md-6 ui-lg-7">
+         <select [(ngModel)]="userModel.role" name="role"  class="form-control"  required>
+                <option value="ADMIN" selected="selected">ADMIN </option>
+                <option value="NORMAL User">NORMAL USER</option>
+              </select>                                
+            </div>     
+        </div>
+           </div> 
+        <div style="margin: 14px;">
+        <span  >
+          <button pButton type="button" routerLink="/home" [disabled]="!userForm.valid" label="Submit" ></button>
+        </span>
+         <span>
+          <button pButton type="button" routerLink="/home"  label="Cancel"  class="cnclbtn"></button>
+          </span>
+      </div>
+    </form>
+     </div>
+  
+  

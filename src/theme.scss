@@ -1,0 +1,218 @@
+//layout navbar and sidebar
+$navbar-height: 55px;
+$layout-background-color:  #1976d2;
+$layout-color: white;
+
+//component like buttons, tables
+$component-color: #fafbff;
+$button-color: white;
+
+//navbar/full-logo;
+$full-logo-height: 35px;
+$full-logo-width: 70px;
+
+$mini-logo-height: 50px;
+$mini-logo-width: 50px;
+
+#layout-topbar {
+  height: $navbar-height;
+  background: #2193b0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #52c9fc, #3596e0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #52c9fc, #3596e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+   overflow: hidden;
+  color: $layout-color !important;
+
+  .mini-logo {
+    width: $mini-logo-height;
+    height: $mini-logo-width;
+  }
+  .full-logo {
+    width: $full-logo-width;
+    height: $full-logo-height;
+  }
+}
+
+#layout-topbar .right-menu > ul > li a {
+  @if $layout-background-color == white {
+    color: linear-gradient(to right,$layout-background-color, adjust-hue( $layout-background-color, 10% ));
+  } @else {
+    color: linear-gradient(to right,$layout-background-color, adjust-hue( $layout-background-color, 10% ));
+  }
+
+}
+.layout-footer{
+  position: fixed;
+  transition: 0.1s;
+z-index: -1;
+  bottom: 0 !important;
+  
+  width: 100% ;
+ background-color: #ecf0f5;
+  color: black;
+}
+
+#layout-topbar .right-menu > ul > li i {
+  @if $layout-background-color == white {
+    color: linear-gradient(to right,$layout-background-color, adjust-hue( $layout-background-color, 80% ));
+  } @else {
+    color: linear-gradient(to right,$layout-background-color, adjust-hue( $layout-background-color, 80% ));
+  }
+
+}
+
+.ui-datatable .ui-datatable-thead > tr > th {
+}
+
+#details > th {
+  color: $component-color !important;
+  background-color: $layout-background-color !important;
+}
+.layout-menu{
+  transition: 0s;
+}
+
+#layout-sidebar .layout-menu > a.active-menuitem > span {
+  @if $layout-background-color == white {
+    color: $layout-color !important;
+  } @else {
+    color: $layout-background-color !important;
+   
+  }
+}
+#layout-sidebar .layout-menu > a.active-menuitem{
+  background-color: lightgrey!important;
+
+}
+#layout-sidebar .layout-menu  .submenushow {
+
+  border-right: 3px solid  adjust-hue( $layout-background-color, 50% );
+}
+#submit_btn, #approve_btn, #confirm-color {
+  color: $component-color !important;
+  text-align: center;
+  background-color: $layout-background-color !important;
+  border: white !important;
+}
+
+#edit_btn {
+  color: $component-color !important;
+  background-color: $layout-background-color !important;
+  min-width: 50px;
+}
+
+#cancel_btn, #reject_btn, #cancel_color {
+  //color: $button-color !important;
+  //background-color: $button-background !important;
+
+}
+
+.ui-widget-header .ui-button:enabled:hover, .ui-widget-header .ui-button:focus, .ui-widget-content .ui-button:enabled:hover, .ui-widget-content .ui-button:focus, .ui-widget.ui-button:enabled:hover, .ui-widget.ui-button:focus, .ui-button:enabled:hover, .ui-button:focus {
+  color: $component-color !important;
+  background-color: lighten( $layout-background-color, 10% ) !important;
+}
+
+.ui-widget-header {
+
+}
+
+.ui-fileupload-content {
+
+  border: none !important;
+}
+
+.ui-fileupload-header {
+  background-color: white;
+  border: none !important;
+}
+
+//table paginator
+.ui-paginator .ui-paginator-page.ui-state-active {
+  background: $layout-background-color !important;
+  color: #ffffff;
+  border-color: white !important;
+}
+
+//active menus colors
+.active1 {
+  color: $layout-background-color !important;
+}
+
+//table selection number
+.ui-state-highlight {
+  border-color: white;
+  background: $layout-background-color !important;
+  color: #FFFFFF;
+}
+
+//footer compnay Name
+.compantName {
+  color: $layout-background-color !important;
+}
+.layou
+
+//checked check box
+.ui-chkbox-box.ui-state-active, .ui-radiobutton-box.ui-state-active {
+
+  background-color: $layout-background-color !important;
+  color: #FFFFFF;
+  border-color: white !important;
+}
+
+.ui-radiobutton-icon {
+  font-size: 14px !important;
+  position: absolute;
+  margin: 1px -6px;
+}
+.ui-radiobutton-box.ui-state-active {
+  background-color: #FFFFFF !important;
+  color:$layout-background-color !important;
+  border-color: #bac2a4 !important;
+}
+
+//spinner
+
+@keyframes ui-progress-spinner-color {
+  100%,
+  0% {
+    stroke: $layout-background-color;
+  }
+  40% {
+    stroke: $layout-background-color;
+  }
+  66% {
+    stroke: $layout-background-color;
+  }
+  80%,
+  90% {
+    stroke: $layout-background-color;
+  }
+}
+
+//login button
+.login-btn {
+  background-color: $layout-background-color !important;
+  border: white !important;
+}
+//inputYex
+.ui-inputtext{
+  width:100%;
+}
+.ui-dropdown{
+  width:100% !important;
+}
+.inputText{
+  float: left;
+}
+.ui-widget-header {
+  background: $layout-background-color !important;
+}
+
+
+.ui-widget-header .ui-button, .ui-widget-content
+.ui-button, .ui-widget.ui-button, .ui-button{
+  background-color:$layout-background-color !important ;
+}
+
+
+
